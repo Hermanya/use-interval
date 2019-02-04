@@ -17,7 +17,7 @@ npm install --save use-interval
 ```tsx
 import * as React from 'react'
 
-import { useInterval } from 'use-interval'
+import useInterval from 'use-interval'
 
 const Example = () => {
   let [count, setCount] = React.useState(0);
