@@ -4,7 +4,7 @@
 
 [![NPM](https://img.shields.io/npm/v/use-interval.svg)](https://www.npmjs.com/package/use-interval) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[Dan Abramov's post explaining why you cannot just use `setInterval` and `useEffect`.](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)
+[Dan Abramov's blog post explaining why you cannot just use `setInterval` within `useEffect`.](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)
 
 ## Install
 
@@ -33,4 +33,8 @@ const Example = () => {
 
 ## License
 
-MIT © [Hermanya](https://github.com/Hermanya)
+MIT
+
+---
+
+This hook is created using [create-react-hook](https://github.com/hermanya/create-react-hook).

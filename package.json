@@ -45,5 +45,8 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react", "hook", "interval", "setInterval"
   ]
 }
