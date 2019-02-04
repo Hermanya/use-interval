@@ -1,6 +1,6 @@
 {
   "name": "use-interval",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React hook for setting an interval as posted on overreacted.io",
   "author": "Hermanya",
   "license": "MIT",
@@ -47,6 +47,9 @@
     "dist"
   ],
   "keywords": [
-    "react", "hook", "interval", "setInterval"
+    "react",
+    "hook",
+    "interval",
+    "setInterval"
   ]
 }
