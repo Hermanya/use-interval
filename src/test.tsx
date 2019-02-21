@@ -20,7 +20,7 @@ describe('useInterval', () => {
     expect(useInterval).toBeInstanceOf(Function);
   });
   it('exports a function (named)', () => {
-    expect(useInterval).toBeInstanceOf(Function);
+    expect(namedHook).toBeInstanceOf(Function);
   });
   it('hooks identity are the same', () => {
     expect(useInterval).toBe(namedHook);
