@@ -1,0 +1,9 @@
+{
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "rollup.config.js",
+      "options": { "semi": false }
+    }
+  ]
+}
