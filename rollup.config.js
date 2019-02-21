@@ -27,6 +27,12 @@ export default {
     url({ exclude: ['**/*.svg'] }),
     resolve(),
     typescript({
+      tsconfigOverride: {
+        compilerOptions: {
+          isolatedModules: false,
+          declaration: true
+        }
+      },
       rollupCommonJSResolveHack: true,
       clean: true
     }),
