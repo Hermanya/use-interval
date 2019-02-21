@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import ReactDOM from 'react-dom';
+import { act } from 'react-dom/test-utils';
 
 // micro react-testing-library shim
 // feel free to replace it for the real-deal
@@ -13,7 +14,9 @@ export const render = (
   }: { container?: HTMLElement } = {}
 ) => {
   roots.add(container);
-  ReactDOM.render(element, container);
+  act(() => {
+    ReactDOM.render(element, container);
+  });
   return { container };
 };
 
