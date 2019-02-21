@@ -4,9 +4,14 @@ import useInterval, { useInterval as namedHook } from '.';
 
 beforeEach(cleanup);
 
-type IntervalProps = { fn: () => void; delay: number | null };
-const Interval = ({ fn, delay }: IntervalProps) => {
-  useInterval(fn, delay);
+type IntervalProps = {
+  fn: () => void;
+  delay: number | null;
+  immediate?: boolean;
+};
+
+const Interval = ({ fn, delay, immediate }: IntervalProps) => {
+  useInterval(fn, delay, immediate);
   return null;
 };
 
@@ -25,22 +30,45 @@ describe('useInterval', () => {
     expect(useInterval.name).toBe('useInterval');
   });
 
-  jest.useFakeTimers();
+  describe('regular mode (delayed)', () => {
+    jest.useFakeTimers();
 
-  const fn: () => void = jest.fn();
-  const { container } = render(<Interval fn={fn} delay={500} />);
+    const fn: () => void = jest.fn();
+    const { container } = render(<Interval fn={fn} delay={500} />);
 
-  expect(fn).toBeCalledTimes(0 /* not called on first render */);
-  jest.advanceTimersByTime(500);
-  expect(fn).toBeCalledTimes(1);
-  jest.advanceTimersByTime(1500);
-  expect(fn).toBeCalledTimes(4);
-
-  it('cancels interval when delay is null', () => {
-    render(<Interval fn={fn} delay={null} />, { container });
+    expect(fn).toBeCalledTimes(0 /* not called on first render */);
+    jest.advanceTimersByTime(500);
+    expect(fn).toBeCalledTimes(1);
     jest.advanceTimersByTime(1500);
     expect(fn).toBeCalledTimes(4);
+
+    it('cancels interval when delay is null', () => {
+      render(<Interval immediate fn={fn} delay={null} />, { container });
+      jest.advanceTimersByTime(1500);
+      expect(fn).toBeCalledTimes(4);
+    });
+
+    jest.clearAllTimers();
   });
 
-  jest.clearAllTimers();
+  describe('immediate mode', () => {
+    jest.useFakeTimers();
+
+    const fn = jest.fn();
+    const { container } = render(<Interval immediate fn={fn} delay={500} />);
+
+    expect(fn).toBeCalledTimes(1 /* called immediatelly on render */);
+    jest.advanceTimersByTime(500);
+    expect(fn).toBeCalledTimes(2);
+    jest.advanceTimersByTime(1500);
+    expect(fn).toBeCalledTimes(5);
+
+    it('cancels interval when delay is null', () => {
+      render(<Interval immediate fn={fn} delay={null} />, { container });
+      jest.advanceTimersByTime(1500);
+      expect(fn).toBeCalledTimes(5);
+    });
+
+    jest.clearAllTimers();
+  });
 });

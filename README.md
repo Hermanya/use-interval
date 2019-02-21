@@ -31,6 +31,15 @@ const Example = () => {
 }
 ```
 
+```tsx
+// TypeScript Declaration
+useInterval(
+  callback: () => void,
+  delay: number,
+  immediate?: boolean /* called when mounted if true */
+)
+```
+
 ## License
 
 MIT
