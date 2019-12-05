@@ -6,7 +6,7 @@ beforeEach(cleanup);
 
 type IntervalProps = {
   fn: () => void;
-  delay: number | null;
+  delay: number | null | false;
   immediate?: boolean;
 };
 
