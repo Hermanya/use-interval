@@ -6,6 +6,12 @@
 
 [Dan Abramov's blog post explaining why you cannot just use `setInterval` within `useEffect`.](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)
 
+## Used by
+
+- [kentcdodds / react-performance](https://github.com/kentcdodds/react-performance)
+- [element-motion](https://github.com/element-motion/element-motion)
+- [wintercounter / mhy](https://github.com/wintercounter/mhy)
+
 ## Install
 
 ```bash
