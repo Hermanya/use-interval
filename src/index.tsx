@@ -6,7 +6,7 @@ const noop = () => {};
 
 export function useInterval(
   callback: () => void,
-  delay: number | null,
+  delay: number | null | false,
   immediate?: boolean
 ) {
   const savedCallback = useRef(noop);
@@ -19,13 +19,13 @@ export function useInterval(
   // Execute callback if immediate is set.
   useEffect(() => {
     if (!immediate) return;
-    if (delay === null) return;
+    if (delay === null || delay === false) return;
     savedCallback.current();
   }, [immediate]);
 
   // Set up the interval.
   useEffect(() => {
-    if (delay === null) return undefined;
+    if (delay === null || delay === false) return undefined;
     const tick = () => savedCallback.current();
     const id = setInterval(tick, delay);
     return () => clearInterval(id);

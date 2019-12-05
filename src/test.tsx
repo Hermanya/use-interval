@@ -48,6 +48,12 @@ describe('useInterval', () => {
       expect(fn).toBeCalledTimes(4);
     });
 
+    it('cancels interval when delay is false', () => {
+      render(<Interval immediate fn={fn} delay={false} />, { container });
+      jest.advanceTimersByTime(1500);
+      expect(fn).toBeCalledTimes(4);
+    });
+
     jest.clearAllTimers();
   });
 
@@ -65,6 +71,12 @@ describe('useInterval', () => {
 
     it('cancels interval when delay is null', () => {
       render(<Interval immediate fn={fn} delay={null} />, { container });
+      jest.advanceTimersByTime(1500);
+      expect(fn).toBeCalledTimes(5);
+    });
+
+    it('cancels interval when delay is false', () => {
+      render(<Interval immediate fn={fn} delay={false} />, { container });
       jest.advanceTimersByTime(1500);
       expect(fn).toBeCalledTimes(5);
     });
