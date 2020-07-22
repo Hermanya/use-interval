@@ -8,8 +8,13 @@
 
 ## Used by
 
+
+- [codesandbox / codesandbox-client](https://github.com/codesandbox/codesandbox-client)
 - [kentcdodds / react-performance](https://github.com/kentcdodds/react-performance)
+- [siddharthkp / react-ui](https://github.com/siddharthkp/react-ui)
 - [element-motion](https://github.com/element-motion/element-motion)
+- [wintercounter / mhy](https://github.com/wintercounter/mhy)
+- [sagemathinc / cocalc](https://github.com/sagemathinc/cocalc)
 - [wintercounter / mhy](https://github.com/wintercounter/mhy)
 
 ## Install
