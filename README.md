@@ -36,7 +36,7 @@ const Example = () => {
   useInterval(() => {
     // Your custom logic here
     setCount(count + 1);
-  }, 1000);
+  }, 1000); // passing null instead of 1000 will cancel the interval if it is already running
 
   return <h1>{count}</h1>;
 }
