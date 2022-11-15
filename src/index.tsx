@@ -18,14 +18,13 @@ export function useInterval(
 
   // Execute callback if immediate is set.
   useEffect(() => {
-    if (!immediate) return;
-    if (delay === null || delay === false) return;
+    if (!immediate || delay === null || delay === false) return;
     savedCallback.current();
   }, [immediate]);
 
   // Set up the interval.
   useEffect(() => {
-    if (delay === null || delay === false) return undefined;
+    if (delay === null || delay === false) return;
     const tick = () => savedCallback.current();
     const id = setInterval(tick, delay);
     return () => clearInterval(id);
