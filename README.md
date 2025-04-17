@@ -8,7 +8,7 @@
 
 ## Used by
 
-
+- [openai / codex](https://github.com/openai/codex)
 - [codesandbox / codesandbox-client](https://github.com/codesandbox/codesandbox-client)
 - [kentcdodds / react-performance](https://github.com/kentcdodds/react-performance)
 - [siddharthkp / react-ui](https://github.com/siddharthkp/react-ui)
